@@ -1,5 +1,3 @@
-
-
 # STA 141B Final Project Proposal
 
 ## Members
@@ -14,7 +12,7 @@ Troy Lui, Jonathan Quach, Christina Chang
 - What question(s) will you attempt to answer or what problems will you attempt to solve? 
 - Why and to whom are these meaningful?
 </br>
-1. The topic of the project is climate change and its relationship with population and demographics. 
+1. The topic of the project is climate change and its relationship with population and demographics.
 
 2. We attempt to solve the following questions.
 
@@ -41,6 +39,8 @@ The first source comes from the US Department of Commerce, which contains data o
 - What makes your project challenging? Consider that you will have about 6 weeks to work on the project. 
 - What skills from STA 141A-B or other statistics classes do you expect to use on the project?
 </br>
+
 1. This project will be challenging because we need to use multiple datasets to answer various questions. One aspect that may be difficult is merging the climate and demographic datasets. In order to merge multiple datasets together, it will be important to standardize the format of the data sets. 
+
 2. We can use exploratory data analysis skills that we learned from STA 141A to create maps or graphics visualizing the data. We will need to learn how to perform EDA using Python and possibly machine learning models in this class. We can use our knowledge of regression methods from STA 108 to build additionally statistical models on our data.
 
