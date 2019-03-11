@@ -1,0 +1,2 @@
+mallet import-file --input cleaned_text_only.txt --keep-sequence TRUE --output topics.mallet
+ mallet train-topics --input topics.mallet --num-topics 40 --output-model trained.mallet
