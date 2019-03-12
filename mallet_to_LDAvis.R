@@ -17,7 +17,9 @@ library(parallel)
 #' @return html/js/json files of a LDAvis visualization
 #' @export
 
-saveTables <- function(topic.model, outDir = tempfile(), ...){
+saveTables <- function(topic.model, num_cores, outDir = tempfile(), ...){
+  var_parallel_cluster <- makeCluster(var_num_cores)
+  
 	# Make JSON
 	phi <- mallet::mallet.topic.words(topic.model, smoothed = TRUE, normalized = TRUE)
 	theta <- mallet::mallet.doc.topics(topic.model, smoothed = TRUE, normalized = TRUE)
@@ -27,8 +29,12 @@ saveTables <- function(topic.model, outDir = tempfile(), ...){
 	json <- list(
 	phi = phi, theta = theta, doc.length = doc.length, vocab = vocab,
 	term.frequency = droplevels(word.freqs)$term.freq)
-	json <- toJSON(json)
-	write(json, paste0(outDir, "/vis.JSON"))
+	#json <- toJSON(json)
+	#write(json, paste0(outDir, "/vis.JSON"))
+	jsonLDA <- LDAvis::createJSON(phi = json$phi, theta = json$theta, doc.length = json$doc.length,
+	                              vocab = json$vocab, term.frequency = json$term.frequency,
+	                              cluster = var_parallel_cluster)
+	LDAvis::serVis(jsonLDA, out.dir = outDir)
 }
 
 # Obtained from the RMallet src
@@ -56,6 +62,7 @@ mallet.model <- mallet::MalletLDA(num.topics = 40,
 mallet.model$loadDocuments(instance.list)
 
 
-output_dir <- paste0(getwd(), "/output")
+output_dir <- paste0(getwd(), "/LDAVis")
 saveTables(topic.model = mallet.model, 
+           num_cores = var_num_cores,
            outDir = output_dir)
