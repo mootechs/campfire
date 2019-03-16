@@ -43,4 +43,6 @@ and Frequency Plots and Word Clouds
 National (Google) News and Frequency Plots and Word Clouds
 * clustering_hierarchical.ipynb - contains code for constructing
 the hierarchical clustering dendrogram
+* clustering_kmeans.ipynb - contains code for constructing
+the K-means clustering plot
 
