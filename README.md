@@ -7,7 +7,7 @@ STA 141B final project repository. The file report is:
 * STA 141B Project Report.pdf
 
 Note: To open the visualization, you must either use Mozilla Firefox or 
-run Google Chrome with```-allow-file-access-from-files``` parameter.
+run Google Chrome with ```--allow-file-access-from-files``` parameter.
 
 ## Team Members
 
